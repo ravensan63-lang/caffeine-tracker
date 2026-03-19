@@ -1,0 +1,14 @@
+{
+  "drinks": [
+    { "name": "Espresso (30ml)", "caffeine_mg": 63 },
+    { "name": "Filter coffee (240ml)", "caffeine_mg": 95 },
+    { "name": "Americano", "caffeine_mg": 80 },
+    { "name": "Matcha latte", "caffeine_mg": 35 },
+    { "name": "Black tea (240ml)", "caffeine_mg": 47 },
+    { "name": "Green tea (240ml)", "caffeine_mg": 28 },
+    { "name": "Red Bull (250ml)", "caffeine_mg": 80 },
+    { "name": "Coke (330ml)", "caffeine_mg": 34 },
+    { "name": "Monster (500ml)", "caffeine_mg": 160 }
+  ],
+  "daily_max_mg": 400
+}
