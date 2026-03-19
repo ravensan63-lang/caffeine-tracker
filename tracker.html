@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caffeine tracker</title>
+  <style>
+    body { font-family: sans-serif; max-width: 400px; margin: 2rem auto; padding: 1rem; }
+    select, button { padding: 8px 12px; font-size: 14px; margin: 4px 0; }
+    #log { margin-top: 1rem; }
+    .entry { padding: 6px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+    #total { font-size: 1.5rem; font-weight: bold; margin-top: 1rem; }
+    .warn { color: orange; }
+    .danger { color: red; }
+  </style>
+</head>
+<body>
+  <h2>Caffeine tracker</h2>
+  <select id="drink">
+    <option value="63">Espresso (63mg)</option>
+    <option value="95">Filter coffee (95mg)</option>
+    <option value="80">Americano (80mg)</option>
+    <option value="35">Matcha latte (35mg)</option>
+    <option value="47">Black tea (47mg)</option>
+    <option value="80">Red Bull (80mg)</option>
+    <option value="160">Monster (160mg)</option>
+  </select>
+  <button onclick="add()">Add</button>
+  <div id="log"></div>
+  <div id="total">0mg / 400mg</div>
+  <script>
+    let total = 0;
+    function add() {
+      const sel = document.getElementById('drink');
+      const mg = parseInt(sel.value);
+      total += mg;
+      const entry = document.createElement('div');
+      entry.className = 'entry';
+      entry.textContent = '+ ' + mg + 'mg — ' + sel.options[sel.selectedIndex].text;
+      document.getElementById('log').prepend(entry);
+      const t = document.getElementById('total');
+      t.textContent = total + 'mg / 400mg';
+      t.className = total > 400 ? 'danger' : total > 300 ? 'warn' : '';
+    }
+  </script>
+</body>
+</html>
+```
